@@ -13,4 +13,11 @@ public class RacingCarName {
     public String getName() {
         return this.name;
     }
+
+    @Override
+    public String toString() {
+        return "RacingCarName{" +
+                "name='" + name + '\'' +
+                '}';
+    }
 }
