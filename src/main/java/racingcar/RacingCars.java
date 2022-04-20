@@ -1,5 +1,7 @@
 package racingcar;
 
+import racingcar.support.RandomNumberGenerator;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,6 +20,14 @@ public class RacingCars {
 
     public List<RacingCar> getRacingCars() {
         return this.racingCars;
+    }
+
+    public void start(int count, RandomNumberGenerator generator) {
+        List<Integer> randomNumbers = generator.generate(count * racingCars.size());
+
+        for (int i = 0; i < randomNumbers.size(); i++) {
+            racingCars.get(i % racingCars.size()).moveOnCondition(randomNumbers.get(i));
+        }
     }
 
     @Override
