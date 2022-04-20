@@ -10,8 +10,11 @@ Racing Car
 * 경주할 자동차 [RacingCar]
   * 자동차에 이름을 부여할 수 있다.
     * 5자 이상이면 IllegalArgumentException.
-  * 전진하는 조건은 0에서 9사이에서 random 값을 구한 후 random 값이 4이상일 경우 전진, 3이하의 값이면 멈춘다.
+  * random 값이 4이상일 경우 전진, 3이하의 값이면 멈춘다.
     * 0~9사이의 값이 아니면 IllegalArgumentException.
+
+* 난수 생성 [Generator]
+  * 0에서 9사이에서 random 값 생성
 
 * 경주할 자동차들 [RacingCars]
   * 전진하는 자동차를 출력할 때 자동차 이름을 같이 출력한다.
