@@ -15,7 +15,7 @@ public class RacingCarTest {
 
     @Test
     void 자동차에_이름생성_1번_전진() {
-        racingCar.start(4);
+        racingCar.moveOnCondition(4);
 
         assertThat(racingCar.getName()).isEqualTo("sae");
         assertThat(racingCar.getLocation()).isEqualTo("-");
@@ -23,7 +23,7 @@ public class RacingCarTest {
 
     @Test
     void 자동차에_이름생성_멈춤() {
-        racingCar.start(1);
+        racingCar.moveOnCondition(1);
 
         assertThat(racingCar.getName()).isEqualTo("sae");
         assertThat(racingCar.getLocation()).isEqualTo("");

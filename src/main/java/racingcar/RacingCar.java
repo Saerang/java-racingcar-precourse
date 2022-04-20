@@ -8,8 +8,8 @@ public class RacingCar {
         this.name = new RacingCarName(name);
     }
 
-    public void start(int number) {
-        location.start(number);
+    public void moveOnCondition(int number) {
+        location.moveOnCondition(number);
     }
 
     public String getName() {
