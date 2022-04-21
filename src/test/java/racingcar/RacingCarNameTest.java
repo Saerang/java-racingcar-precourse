@@ -19,6 +19,6 @@ class RacingCarNameTest {
     void 이름_5글자_이상() {
         assertThatThrownBy(() -> new RacingCarName("saerang"))
                 .isInstanceOf(IllegalArgumentException.class)
-                .hasMessage("[ERROR] 이름은 5글자를 넘길 수 없습니다.");
+                .hasMessage("이름은 5글자를 넘길 수 없습니다.");
     }
 }
