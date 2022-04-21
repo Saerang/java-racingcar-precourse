@@ -22,11 +22,11 @@ public class RacingCars {
         return this.racingCars;
     }
 
-    public void start(int count, RandomNumberGenerator generator) {
-        List<Integer> randomNumbers = generator.generate(count * racingCars.size());
+    public void start(RandomNumberGenerator generator) {
+        List<Integer> randomNumbers = generator.generate(racingCars.size());
 
         for (int i = 0; i < randomNumbers.size(); i++) {
-            racingCars.get(i % racingCars.size()).moveOnCondition(randomNumbers.get(i));
+            racingCars.get(i).moveOnCondition(randomNumbers.get(i));
         }
     }
 

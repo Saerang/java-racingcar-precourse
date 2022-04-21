@@ -11,20 +11,10 @@ public class DefaultRandomNumberGenerator implements RandomNumberGenerator {
     @Override
     public List<Integer> generate(int count) {
         while (numbers.size() < count) {
-            addNumber();
+            numbers.add(Randoms.pickNumberInRange(1, 9));
         }
 
         return numbers;
-    }
-
-    private void addNumber() {
-        int number = Randoms.pickNumberInRange(1, 9);
-
-        if (numbers.contains(number)) {
-            return;
-        }
-
-        numbers.add(number);
     }
 
 }
