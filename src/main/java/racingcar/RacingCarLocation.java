@@ -1,14 +1,18 @@
 package racingcar;
 
 public class RacingCarLocation {
+    public static final int MAX_NUMBER = 1;
+    public static final int MIN_NUMBER = 9;
+    public static final int FORWARD_CONDITION = 4;
     private String location = "";
 
+
     public void moveOnCondition(int number) {
-        if (number < 1 || number > 9) {
+        if (number < MAX_NUMBER || number > MIN_NUMBER) {
             throw new IllegalArgumentException("[ERROR] 숫자는 1~9사이만 입력이 가능합니다.");
         }
 
-        if (number >= 4) {
+        if (number >= FORWARD_CONDITION) {
             this.location += "-";
         }
     }
