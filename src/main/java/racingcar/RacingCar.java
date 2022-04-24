@@ -20,6 +20,10 @@ public class RacingCar {
         return this.location.getLocation();
     }
 
+    public int getCurrentLocation() {
+        return this.location.getLocation().length();
+    }
+
     @Override
     public String toString() {
         return "RacingCar{" +
