@@ -35,10 +35,10 @@ public class Winners {
         }
     }
 
-    public List<String> getWinnerNames() {
-        List<String> winnerNames = new ArrayList<>();
+    public List<RacingCarName> getWinnerNames() {
+        List<RacingCarName> winnerNames = new ArrayList<>();
         for (RacingCar winnerRacingCar : winnerRacingCars) {
-            winnerNames.add(winnerRacingCar.getName());
+            winnerNames.add(winnerRacingCar.getRacingCarName());
         }
 
         return winnerNames;

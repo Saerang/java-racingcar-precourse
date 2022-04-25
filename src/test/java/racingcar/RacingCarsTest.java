@@ -13,9 +13,15 @@ class RacingCarsTest {
     void 자동차를_5대_생성() {
         RacingCars racingCars = new RacingCars("sae,rang,pro,free,pass");
 
+
         assertThat(racingCars.getRacingCars()).hasSize(5)
-                                              .extracting("name")
-                                              .containsExactly("sae", "rang", "pro", "free", "pass");
+                                              .extracting("racingCarName")
+                                              .containsExactly(
+                                                      new RacingCarName("sae"),
+                                                      new RacingCarName("rang"),
+                                                      new RacingCarName("pro"),
+                                                      new RacingCarName("free"),
+                                                      new RacingCarName("pass"));
     }
 
     @Test
@@ -24,8 +30,10 @@ class RacingCarsTest {
         racingCars.start(new TestRandomNumberGenerator(Arrays.asList(4, 1)));
 
         assertThat(racingCars.getRacingCars()).hasSize(2)
-                                              .extracting("name", "location")
-                                              .containsExactly(tuple("sae", "-"), tuple("rang", ""));
+                                              .extracting("racingCarName", "location")
+                                              .containsExactly(
+                                                      tuple(new RacingCarName("sae"), "-"),
+                                                      tuple(new RacingCarName("rang"), ""));
     }
 
     @Test
@@ -34,10 +42,10 @@ class RacingCarsTest {
         racingCars.start(new TestRandomNumberGenerator(Arrays.asList(4, 1, 4)));
 
         assertThat(racingCars.getRacingCars()).hasSize(3)
-                                              .extracting("name", "location")
-                                              .containsExactly(tuple("sae", "-"),
-                                                               tuple("rang", ""),
-                                                               tuple("free", "-"));
+                                              .extracting("racingCarName", "location")
+                                              .containsExactly(tuple(new RacingCarName("sae"), "-"),
+                                                               tuple(new RacingCarName("rang"), ""),
+                                                               tuple(new RacingCarName("free"), "-"));
     }
 
 }

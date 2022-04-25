@@ -29,9 +29,11 @@ class WinnersTest {
 
         Winners winners = getWinners();
 
-        List<String> winnerNames = winners.getWinnerNames();
+        List<RacingCarName> winnerNames = winners.getWinnerNames();
 
-        assertThat(winnerNames).hasSize(1).containsExactly("free");
+        assertThat(winnerNames).hasSize(1)
+                               .extracting("value")
+                               .containsExactly("free");
     }
 
     @Test
@@ -42,9 +44,11 @@ class WinnersTest {
 
         Winners winners = getWinners();
 
-        List<String> winnerNames = winners.getWinnerNames();
+        List<RacingCarName> winnerNames = winners.getWinnerNames();
 
-        assertThat(winnerNames).hasSize(2).containsExactly("rang", "free");
+        assertThat(winnerNames).hasSize(2)
+                               .extracting("value")
+                               .containsExactly("rang", "free");
     }
 
     private Winners getWinners() {

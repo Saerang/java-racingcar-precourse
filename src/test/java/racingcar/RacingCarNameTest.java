@@ -12,7 +12,7 @@ class RacingCarNameTest {
     void 이름_5글자() {
         RacingCarName racingCarName = new RacingCarName("sae");
 
-        assertThat(racingCarName.getName()).isEqualTo("sae");
+        assertThat(racingCarName.getValue()).isEqualTo("sae");
     }
 
     @Test

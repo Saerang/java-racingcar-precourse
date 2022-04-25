@@ -1,19 +1,19 @@
 package racingcar;
 
 public class RacingCar {
-    private final RacingCarName name;
+    private final RacingCarName racingCarName;
     private final RacingCarLocation location = new RacingCarLocation();
 
     public RacingCar(String name) {
-        this.name = new RacingCarName(name);
+        this.racingCarName = new RacingCarName(name);
     }
 
     public void moveOnCondition(int number) {
         location.moveOnCondition(number);
     }
 
-    public String getName() {
-        return this.name.getName();
+    public RacingCarName getRacingCarName() {
+        return this.racingCarName;
     }
 
     public String getLocation() {
@@ -27,7 +27,7 @@ public class RacingCar {
     @Override
     public String toString() {
         return "RacingCar{" +
-                "name=" + name +
+                "racingCarName=" + racingCarName +
                 ", location=" + location +
                 '}';
     }
